@@ -27,6 +27,10 @@ class NudgeCreateViewController: UIViewController {
         ACL.setPublicWriteAccess(true)
         nudgeObject.ACL = ACL
         nudgeObject.saveInBackground()
+        
+        let parent = navigationController!.viewControllers[0] as! NudgeListViewController
+        
+        parent.query.getNudgesForUser(userName: "Andy")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
