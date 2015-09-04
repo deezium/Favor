@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QdX-CS-x1s">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -31,6 +32,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="92" y="16" width="300" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debarshi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-Od-8py">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -62,6 +66,9 @@
                                                     <state key="normal" title="Button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="177" y="68" width="46" height="30"/>
+                                                    </variation>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -83,15 +90,15 @@
                                                     <exclude reference="h2g-qR-YqL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="4iN-5p-VG5"/>
-                                                    <exclude reference="PFX-nt-OkD"/>
-                                                    <exclude reference="YBv-gt-WsB"/>
                                                     <exclude reference="NXO-If-u9d"/>
                                                     <exclude reference="NpD-WT-vYE"/>
                                                     <exclude reference="nGe-qe-8b5"/>
                                                     <exclude reference="icv-9Z-1BL"/>
                                                     <exclude reference="7Bm-uP-eTU"/>
                                                     <exclude reference="ICM-eg-zjJ"/>
+                                                    <exclude reference="4iN-5p-VG5"/>
+                                                    <exclude reference="PFX-nt-OkD"/>
+                                                    <exclude reference="YBv-gt-WsB"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -102,15 +109,15 @@
                                                     <include reference="h2g-qR-YqL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="4iN-5p-VG5"/>
-                                                    <include reference="PFX-nt-OkD"/>
-                                                    <include reference="YBv-gt-WsB"/>
                                                     <include reference="NXO-If-u9d"/>
                                                     <include reference="NpD-WT-vYE"/>
                                                     <include reference="nGe-qe-8b5"/>
                                                     <include reference="icv-9Z-1BL"/>
                                                     <include reference="7Bm-uP-eTU"/>
                                                     <include reference="ICM-eg-zjJ"/>
+                                                    <include reference="4iN-5p-VG5"/>
+                                                    <include reference="PFX-nt-OkD"/>
+                                                    <include reference="YBv-gt-WsB"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -122,9 +129,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -139,10 +143,10 @@
                                 <exclude reference="p4W-tR-Xhk"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="nHp-dR-jIA"/>
                                 <exclude reference="A8p-2x-YXI"/>
                                 <exclude reference="Xlo-un-KJC"/>
                                 <exclude reference="YFv-vM-hyx"/>
-                                <exclude reference="nHp-dR-jIA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -150,10 +154,10 @@
                                 <include reference="p4W-tR-Xhk"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="nHp-dR-jIA"/>
                                 <include reference="A8p-2x-YXI"/>
                                 <include reference="Xlo-un-KJC"/>
                                 <include reference="YFv-vM-hyx"/>
-                                <include reference="nHp-dR-jIA"/>
                             </mask>
                         </variation>
                     </view>
@@ -175,6 +179,7 @@
                         <viewControllerLayoutGuide type="bottom" id="163-EI-JtJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9k9-hR-Yvj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -192,6 +197,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZTH-4m-v9F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q0y-gj-Ohh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
