@@ -12,6 +12,8 @@
 		336B522B1B9915D8002D097F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336B522A1B9915D8002D097F /* Images.xcassets */; };
 		336B522E1B9915D8002D097F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336B522C1B9915D8002D097F /* LaunchScreen.xib */; };
 		336B523A1B9915D8002D097F /* FavorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B52391B9915D8002D097F /* FavorTests.swift */; };
+		A191ADD11B992535007957FB /* NudgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191ADD01B992535007957FB /* NudgeModel.swift */; };
+		A191ADD31B992717007957FB /* NudgeQueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191ADD21B992717007957FB /* NudgeQueryController.swift */; };
 		A1A0F99A1B9916B500663C7A /* NudgeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A0F9991B9916B500663C7A /* NudgeListViewController.swift */; };
 		A1A0F99C1B9916D300663C7A /* NudgeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A0F99B1B9916D300663C7A /* NudgeCreateViewController.swift */; };
 		A1A0F99E1B9916FC00663C7A /* NudgeConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A0F99D1B9916FC00663C7A /* NudgeConfirmationViewController.swift */; };
@@ -41,6 +43,8 @@
 		336B52391B9915D8002D097F /* FavorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorTests.swift; sourceTree = "<group>"; };
 		35FC2C1B37A89F253D823CA7 /* Pods-Favor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Favor/Pods-Favor.debug.xcconfig"; sourceTree = "<group>"; };
 		743A5FB4A698F1BCB24F0D1B /* Pods-Favor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Favor/Pods-Favor.release.xcconfig"; sourceTree = "<group>"; };
+		A191ADD01B992535007957FB /* NudgeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NudgeModel.swift; sourceTree = "<group>"; };
+		A191ADD21B992717007957FB /* NudgeQueryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NudgeQueryController.swift; sourceTree = "<group>"; };
 		A1A0F9991B9916B500663C7A /* NudgeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NudgeListViewController.swift; sourceTree = "<group>"; };
 		A1A0F99B1B9916D300663C7A /* NudgeCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NudgeCreateViewController.swift; path = ../NudgeCreateViewController.swift; sourceTree = "<group>"; };
 		A1A0F99D1B9916FC00663C7A /* NudgeConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NudgeConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -92,10 +96,12 @@
 			children = (
 				336B52231B9915D8002D097F /* AppDelegate.swift */,
 				A1A0F9991B9916B500663C7A /* NudgeListViewController.swift */,
+				A191ADD21B992717007957FB /* NudgeQueryController.swift */,
 				A1A0F99B1B9916D300663C7A /* NudgeCreateViewController.swift */,
 				A1A0F99F1B99197900663C7A /* NudgeCellView.swift */,
 				A1A0F99D1B9916FC00663C7A /* NudgeConfirmationViewController.swift */,
 				336B52271B9915D8002D097F /* Main.storyboard */,
+				A191ADD01B992535007957FB /* NudgeModel.swift */,
 				336B522A1B9915D8002D097F /* Images.xcassets */,
 				336B522C1B9915D8002D097F /* LaunchScreen.xib */,
 				336B52211B9915D8002D097F /* Supporting Files */,
@@ -297,10 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A0F99C1B9916D300663C7A /* NudgeCreateViewController.swift in Sources */,
+				A191ADD11B992535007957FB /* NudgeModel.swift in Sources */,
 				A1A0F9A01B99197900663C7A /* NudgeCellView.swift in Sources */,
 				A1A0F99A1B9916B500663C7A /* NudgeListViewController.swift in Sources */,
 				336B52241B9915D8002D097F /* AppDelegate.swift in Sources */,
 				A1A0F99E1B9916FC00663C7A /* NudgeConfirmationViewController.swift in Sources */,
+				A191ADD31B992717007957FB /* NudgeQueryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

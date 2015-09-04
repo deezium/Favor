@@ -161,7 +161,20 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="f7b-Ag-OLd"/>
+                    <navigationItem key="navigationItem" id="f7b-Ag-OLd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="I6O-lq-Ay4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="chK-wB-Pn7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New Nudge">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="c10-zg-xng" kind="show" identifier="showCreateNudgeSegue" id="YDA-ur-Gt3"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="p4W-tR-Xhk" id="Trf-zB-tYb"/>
                     </connections>
@@ -181,8 +194,83 @@
                     <view key="view" contentMode="scaleToFill" id="9k9-hR-Yvj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uE-yd-xTQ">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1LP-bA-Yir">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7D-Je-h2C">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Nudge!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapNudgeButton:" destination="c10-zg-xng" eventType="touchUpInside" id="xD1-64-ly7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1LP-bA-Yir" secondAttribute="centerX" id="5FS-0O-Iis"/>
+                            <constraint firstAttribute="trailing" secondItem="2uE-yd-xTQ" secondAttribute="trailing" constant="16" id="8Do-hU-cdD"/>
+                            <constraint firstItem="X7D-Je-h2C" firstAttribute="top" secondItem="1LP-bA-Yir" secondAttribute="bottom" constant="22" id="9ny-Nd-lSD"/>
+                            <constraint firstItem="1LP-bA-Yir" firstAttribute="top" secondItem="2uE-yd-xTQ" secondAttribute="bottom" constant="18" id="GMd-Bq-vaA"/>
+                            <constraint firstItem="1LP-bA-Yir" firstAttribute="leading" secondItem="9k9-hR-Yvj" secondAttribute="leading" constant="16" id="I1U-Bj-KIB"/>
+                            <constraint firstItem="2uE-yd-xTQ" firstAttribute="top" secondItem="ERG-sj-HM4" secondAttribute="bottom" constant="21" id="dC3-Ri-A0r"/>
+                            <constraint firstAttribute="trailing" secondItem="1LP-bA-Yir" secondAttribute="trailing" constant="16" id="dZk-9r-lNL"/>
+                            <constraint firstAttribute="centerX" secondItem="X7D-Je-h2C" secondAttribute="centerX" constant="-2" id="fO6-gd-nS2"/>
+                            <constraint firstItem="2uE-yd-xTQ" firstAttribute="leading" secondItem="9k9-hR-Yvj" secondAttribute="leading" constant="16" id="ihP-xR-ne9"/>
+                            <constraint firstAttribute="centerX" secondItem="2uE-yd-xTQ" secondAttribute="centerX" id="om5-s8-YWf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2uE-yd-xTQ"/>
+                                <exclude reference="1LP-bA-Yir"/>
+                                <exclude reference="X7D-Je-h2C"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8Do-hU-cdD"/>
+                                <exclude reference="dC3-Ri-A0r"/>
+                                <exclude reference="ihP-xR-ne9"/>
+                                <exclude reference="om5-s8-YWf"/>
+                                <exclude reference="5FS-0O-Iis"/>
+                                <exclude reference="GMd-Bq-vaA"/>
+                                <exclude reference="I1U-Bj-KIB"/>
+                                <exclude reference="dZk-9r-lNL"/>
+                                <exclude reference="9ny-Nd-lSD"/>
+                                <exclude reference="fO6-gd-nS2"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="2uE-yd-xTQ"/>
+                                <include reference="1LP-bA-Yir"/>
+                                <include reference="X7D-Je-h2C"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8Do-hU-cdD"/>
+                                <include reference="dC3-Ri-A0r"/>
+                                <include reference="ihP-xR-ne9"/>
+                                <include reference="om5-s8-YWf"/>
+                                <include reference="5FS-0O-Iis"/>
+                                <include reference="GMd-Bq-vaA"/>
+                                <include reference="I1U-Bj-KIB"/>
+                                <include reference="dZk-9r-lNL"/>
+                                <include reference="9ny-Nd-lSD"/>
+                                <include reference="fO6-gd-nS2"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="messageTextField" destination="1LP-bA-Yir" id="pV4-uA-z5E"/>
+                        <outlet property="recipientTextField" destination="2uE-yd-xTQ" id="1d7-fp-kGH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXk-FI-bHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

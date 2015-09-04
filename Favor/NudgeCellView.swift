@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class NudgeCellView: UITableViewCell {
     // TODO
@@ -15,4 +16,9 @@ class NudgeCellView: UITableViewCell {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var leftNameLabel: UILabel!
+    
+    func setWithNudge(nudge: PFObject) {
+        messageTextLabel.text = nudge.objectForKey("message") as! String
+        leftNameLabel.text = nudge.objectForKey("sender") as! String
+    }
 }

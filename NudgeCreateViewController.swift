@@ -7,9 +7,27 @@
 //
 
 import UIKit
+import Parse
 
 class NudgeCreateViewController: UIViewController {
     
+    @IBOutlet weak var recipientTextField: UITextField!
+    
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    @IBAction func didTapNudgeButton(sender: AnyObject) {
+        let nudgeObject = PFObject(className: "Nudge")
+        nudgeObject.setObject("Andy", forKey: "sender")
+        nudgeObject.setObject(messageTextField.text, forKey: "message")
+        nudgeObject.setObject(recipientTextField.text, forKey: "recipient")
+        nudgeObject.setObject(0, forKey: "status")
+        
+        let ACL = PFACL()
+        ACL.setPublicReadAccess(true)
+        ACL.setPublicWriteAccess(true)
+        nudgeObject.ACL = ACL
+        nudgeObject.saveInBackground()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +37,4 @@ class NudgeCreateViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
