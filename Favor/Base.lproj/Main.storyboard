@@ -33,7 +33,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="92" y="16" width="300" height="21"/>
+                                                        <rect key="frame" x="92" y="16" width="220" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debarshi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-Od-8py">
@@ -67,7 +67,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="177" y="68" width="46" height="30"/>
+                                                        <rect key="frame" x="137" y="68" width="46" height="30"/>
                                                     </variation>
                                                 </button>
                                             </subviews>
@@ -214,6 +214,23 @@
                                     <action selector="didTapNudgeButton:" destination="c10-zg-xng" eventType="touchUpInside" id="xD1-64-ly7"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F41-Cj-2qG">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Every hour"/>
+                                    <segment title="Every four hours"/>
+                                    <segment title="Every day"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How often would you like to remind them?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMx-Qk-Td2">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="274" width="324" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -222,6 +239,8 @@
                             <constraint firstItem="X7D-Je-h2C" firstAttribute="top" secondItem="1LP-bA-Yir" secondAttribute="bottom" constant="22" id="9ny-Nd-lSD"/>
                             <constraint firstItem="1LP-bA-Yir" firstAttribute="top" secondItem="2uE-yd-xTQ" secondAttribute="bottom" constant="18" id="GMd-Bq-vaA"/>
                             <constraint firstItem="1LP-bA-Yir" firstAttribute="leading" secondItem="9k9-hR-Yvj" secondAttribute="leading" constant="16" id="I1U-Bj-KIB"/>
+                            <constraint firstItem="F41-Cj-2qG" firstAttribute="top" secondItem="X7D-Je-h2C" secondAttribute="bottom" constant="148" id="ICi-Mu-CV7"/>
+                            <constraint firstAttribute="centerX" secondItem="F41-Cj-2qG" secondAttribute="centerX" constant="-1.5" id="UcJ-qy-QIa"/>
                             <constraint firstItem="2uE-yd-xTQ" firstAttribute="top" secondItem="ERG-sj-HM4" secondAttribute="bottom" constant="21" id="dC3-Ri-A0r"/>
                             <constraint firstAttribute="trailing" secondItem="1LP-bA-Yir" secondAttribute="trailing" constant="16" id="dZk-9r-lNL"/>
                             <constraint firstAttribute="centerX" secondItem="X7D-Je-h2C" secondAttribute="centerX" constant="-2" id="fO6-gd-nS2"/>
@@ -233,6 +252,8 @@
                                 <exclude reference="2uE-yd-xTQ"/>
                                 <exclude reference="1LP-bA-Yir"/>
                                 <exclude reference="X7D-Je-h2C"/>
+                                <exclude reference="F41-Cj-2qG"/>
+                                <exclude reference="eMx-Qk-Td2"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8Do-hU-cdD"/>
@@ -245,6 +266,8 @@
                                 <exclude reference="dZk-9r-lNL"/>
                                 <exclude reference="9ny-Nd-lSD"/>
                                 <exclude reference="fO6-gd-nS2"/>
+                                <exclude reference="ICi-Mu-CV7"/>
+                                <exclude reference="UcJ-qy-QIa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -252,6 +275,8 @@
                                 <include reference="2uE-yd-xTQ"/>
                                 <include reference="1LP-bA-Yir"/>
                                 <include reference="X7D-Je-h2C"/>
+                                <include reference="F41-Cj-2qG"/>
+                                <include reference="eMx-Qk-Td2"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8Do-hU-cdD"/>
@@ -264,10 +289,13 @@
                                 <include reference="dZk-9r-lNL"/>
                                 <include reference="9ny-Nd-lSD"/>
                                 <include reference="fO6-gd-nS2"/>
+                                <include reference="ICi-Mu-CV7"/>
+                                <include reference="UcJ-qy-QIa"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="frequencyControl" destination="F41-Cj-2qG" id="FPz-ff-W9U"/>
                         <outlet property="messageTextField" destination="1LP-bA-Yir" id="pV4-uA-z5E"/>
                         <outlet property="recipientTextField" destination="2uE-yd-xTQ" id="1d7-fp-kGH"/>
                     </connections>

@@ -15,12 +15,31 @@ class NudgeCreateViewController: UIViewController {
     
     @IBOutlet weak var messageTextField: UITextField!
     
+    
+    @IBOutlet weak var frequencyControl: UISegmentedControl!
+    
+    var nudgeInterval = NSTimeInterval()
+    
     @IBAction func didTapNudgeButton(sender: AnyObject) {
+        let selectedFrequencyIndex = frequencyControl.selectedSegmentIndex
+        
+        switch selectedFrequencyIndex {
+        case 0:
+            nudgeInterval = NSTimeInterval(3600)
+        case 1:
+            nudgeInterval = NSTimeInterval(14400)
+        case 2:
+            nudgeInterval = NSTimeInterval(86400)
+        default:
+            break
+        }
+        
         let nudgeObject = PFObject(className: "Nudge")
         nudgeObject.setObject("Andy", forKey: "sender")
         nudgeObject.setObject(messageTextField.text, forKey: "message")
         nudgeObject.setObject(recipientTextField.text, forKey: "recipient")
         nudgeObject.setObject(0, forKey: "status")
+        nudgeObject.setObject(nudgeInterval, forKey: "reminderFrequencyInSeconds")
         
         let ACL = PFACL()
         ACL.setPublicReadAccess(true)
@@ -34,6 +53,7 @@ class NudgeCreateViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -41,4 +61,10 @@ class NudgeCreateViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+enum Frequency {
+    case Hourly
+    case FourHourly
+    case Daily
 }
