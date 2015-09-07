@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import DigitsKit
+import Parse
 
 class LoginViewController: UIViewController {
     
@@ -20,7 +21,21 @@ class LoginViewController: UIViewController {
             if session != nil {
                 println(session.phoneNumber)
                 println(session.userID)
+                let userObject = PFObject(className: "User")
+                userObject.setObject(session.phoneNumber, forKey: "phoneNumber")
+                userObject.setObject(session.userID, forKey: "digitsID")
+                let ACL = PFACL()
+                ACL.setPublicReadAccess(true)
+                ACL.setPublicWriteAccess(true)
+                userObject.ACL = ACL
+                userObject.saveInBackgroundWithBlock {
+                    (success, error) -> Void in
+                    if success == true {
+                        println("user successfully saved")
+                    }
+                }
                 self.performSegueWithIdentifier("showMainApp", sender: self)
+            
             }
         })
         
