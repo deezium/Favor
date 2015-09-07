@@ -17,6 +17,8 @@ import DigitsKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var user: PFUser?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -33,6 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self(), Digits.self()])
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        println("launch options are \(launchOptions)")
+        
+        if let currentUser = PFUser.currentUser() {
+            // show main app page
+        
+        } else {
+            // go to login page
+        }
+        
+        
         return true
     }
 

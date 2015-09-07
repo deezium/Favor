@@ -13,39 +13,81 @@ import Parse
 
 class LoginViewController: UIViewController {
     
+    let defaultPassword = "defaultPassword"
+    let showMainAppIdentifier = "showMainApp"
+
+    var users: [PFUser]?
+    var query = QueryController()
+    
+    
     override func viewDidLoad() {
+        query.delegate = self
         super.viewDidLoad()
-        
-        let digitsButton = DGTAuthenticateButton(authenticationCompletion: {
-            (session, error) in
-            if session != nil {
-                println(session.phoneNumber)
-                println(session.userID)
-                let userObject = PFObject(className: "User")
-                userObject.setObject(session.phoneNumber, forKey: "phoneNumber")
-                userObject.setObject(session.userID, forKey: "digitsID")
-                let ACL = PFACL()
-                ACL.setPublicReadAccess(true)
-                ACL.setPublicWriteAccess(true)
-                userObject.ACL = ACL
-                userObject.saveInBackgroundWithBlock {
-                    (success, error) -> Void in
-                    if success == true {
-                        println("user successfully saved")
-                    }
-                }
-                self.performSegueWithIdentifier("showMainApp", sender: self)
+        if let user = PFUser.currentUser() {
+            println("current user is \(user)")
+            performSegueWithIdentifier(showMainAppIdentifier, sender: self)
+        } else {
             
-            }
-        })
-        
-        digitsButton.center = view.center
-        digitsButton.addTarget(self, action: "didTapDigitsButton:", forControlEvents: .TouchUpInside)
-        self.view.addSubview(digitsButton)
-        
-        
-        
-        
+            let digitsButton = DGTAuthenticateButton(authenticationCompletion: {
+                (session, error) in
+                if session != nil {
+                    
+                    let user = PFUser()
+                    user.username = session.phoneNumber
+                    user.password = self.defaultPassword
+                    user.signUpInBackgroundWithBlock({
+                        (success, error) in
+                        if error != nil {
+                            println("error is \(error)")
+                        } else {
+                            println("success is \(success)")
+                        }
+                    })
+                    
+                    user.saveInBackgroundWithBlock({
+                        (success, error) in
+                        if error != nil {
+                            println("error is \(error)")
+                        } else {
+                            println("success is \(success)")
+                        }
+                    })
+                    
+                    
+                    //                PFUser.logInWithUsernameInBackground(session!.phoneNumber!, password: self.defaultPassword) {
+                    //                    (user: PFUser!, error: NSError!) -> Void in
+                    //                    if user != nil {
+                    //                        // Yes, User Exists
+                    //                        self.loginInitialLabel.text = "User Exists"
+                    //                    } else {
+                    //                        // No, User Doesn't Exist
+                    //                    }
+                    //                }
+                    
+                    //                let nudgeUser = NudgeUser(className: "NudgeUser", dictionary: <#[NSObject : AnyObject]?#>)
+                    
+                    //                let userObject = PFObject(className: "User")
+                    //                userObject.setObject(session.phoneNumber, forKey: "phoneNumber")
+                    //                userObject.setObject(session.userID, forKey: "digitsID")
+                    //                let ACL = PFACL()
+                    //                ACL.setPublicReadAccess(true)
+                    //                ACL.setPublicWriteAccess(true)
+                    //                userObject.ACL = ACL
+                    //                userObject.saveInBackgroundWithBlock {
+                    //                    (success, error) -> Void in
+                    //                    if success == true {
+                    //                        println("user successfully saved")
+                    //                    }
+                    //                }
+                    self.performSegueWithIdentifier("showMainApp", sender: self)
+                    
+                }
+            })
+            
+            digitsButton.center = view.center
+            digitsButton.addTarget(self, action: "didTapDigitsButton:", forControlEvents: .TouchUpInside)
+            self.view.addSubview(digitsButton)
+        }
     }
     
     func didTapDigitsButton(sender: AnyObject) {
@@ -61,3 +103,16 @@ class LoginViewController: UIViewController {
     }
     
 }
+
+extension LoginViewController: QueryControllerProtocol {
+    func didReceiveQueryResults(objects: [PFObject]) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.users = objects as? [PFUser]
+            if self.users!.count > 1 {
+                println("SOMETHING HAS GONE TERRIBLY WRONG! More than 1 user?!")
+            }
+        })
+    }
+}
+
+
