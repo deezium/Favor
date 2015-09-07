@@ -2,23 +2,32 @@ PODS:
   - Amplitude-iOS (3.0.0)
   - Bolts/Tasks (1.2.1)
   - Crashlytics (3.2.0)
+  - Digits (1.9.0)
   - Fabric (1.4.1):
     - Fabric/Base (= 1.4.1)
   - Fabric/Base (1.4.1)
   - Parse (1.8.2):
     - Bolts/Tasks (>= 1.2.1)
+  - SwiftAddressBook (0.4.5)
+  - TwitterCore (1.9.0)
 
 DEPENDENCIES:
   - Amplitude-iOS (~> 3.0)
   - Crashlytics
+  - Digits
   - Fabric
   - Parse
+  - SwiftAddressBook
+  - TwitterCore
 
 SPEC CHECKSUMS:
   Amplitude-iOS: 07875b822c2c935ea7f8021830d375ed4d812d31
   Bolts: 7686a5cb204d1ac54cee26f12d9b7622db3f80d1
   Crashlytics: a29e4f820aa401482b26043dc5d78adf08ac7573
+  Digits: be373967dc2c51917941228d79b231340e2a2dca
   Fabric: 4f718eeca4c02c7d6f6f4e5f0e5f87c63aa38458
   Parse: 188601c6cd91fae55906badd283b513104a3a8c9
+  SwiftAddressBook: 95d1bd0c6aacb5365b6731b0218df51f0c03bcd8
+  TwitterCore: 98ed97a6047c4ef109522840337e815683ead7e5
 
 COCOAPODS: 0.38.2

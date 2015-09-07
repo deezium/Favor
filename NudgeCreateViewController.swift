@@ -45,7 +45,17 @@ class NudgeCreateViewController: UIViewController {
         ACL.setPublicReadAccess(true)
         ACL.setPublicWriteAccess(true)
         nudgeObject.ACL = ACL
-        nudgeObject.saveInBackground()
+        nudgeObject.saveInBackgroundWithBlock {
+            (success,error) -> Void in
+            if success == true {
+                self.recipientTextField.text = ""
+                self.messageTextField.text = ""
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+            else {
+                println("error \(error)")
+            }
+        }
         
         let parent = navigationController!.viewControllers[0] as! NudgeListViewController
         

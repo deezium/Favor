@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 import Bolts
+import Fabric
+import DigitsKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("JnchmxQSmsitoM0hsgvJAIN1mH5DgQP65NeTL3tO",
             clientKey: "CigZvAVjTrHFHTuHEOes56iJEdggh0d6nRa2bCCx")
         
+
+        
+//        Fabric.with([Digits()])
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         return true

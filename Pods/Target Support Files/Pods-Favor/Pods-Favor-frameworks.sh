@@ -55,9 +55,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Favor/Amplitude_iOS.framework'
   install_framework 'Pods-Favor/Bolts.framework'
   install_framework 'Pods-Favor/Parse.framework'
+  install_framework 'Pods-Favor/SwiftAddressBook.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Favor/Amplitude_iOS.framework'
   install_framework 'Pods-Favor/Bolts.framework'
   install_framework 'Pods-Favor/Parse.framework'
+  install_framework 'Pods-Favor/SwiftAddressBook.framework'
 fi

@@ -24,25 +24,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftAddressBook.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>403E419A7F8F5AB7A1136482ED7EDA83</key>
+		<key>2DE0FA0A4964580642142342EC9C2AEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DE602E8C9446DD8469AC7F42BDA99B8</key>
+		<key>4476A658F156BB4B410C8930FC9BD250</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF1BBA7D55449351E76BE5A88A04DBD6</key>
+		<key>5B40AA3F143813EBEAFBDB815AEF7C40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9147BBC1824B55F1255ED50FBBE08DD</key>
+		<key>5B99DD24C122F503E9FA7F8C41EC5B2C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DE3099CEA689932C8AA548228617A97</key>
 		<dict>
 			<key>primary</key>
 			<true/>

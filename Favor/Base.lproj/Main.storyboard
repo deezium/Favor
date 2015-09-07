@@ -6,6 +6,28 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="KVH-x0-PpU">
+            <objects>
+                <viewController id="ScG-tK-XTr" customClass="LoginViewController" customModule="Favor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ibd-QZ-mX5"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Zh-Ns-arH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N7j-iL-pK3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yJm-09-CjO"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" id="F5s-68-aEg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AL5-LU-0sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096.5" y="571.5"/>
+        </scene>
         <!--Nudge List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -225,7 +247,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How often would you like to remind them?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMx-Qk-Td2">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="40" y="274" width="324" height="21"/>
@@ -256,14 +278,14 @@
                                 <exclude reference="eMx-Qk-Td2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="8Do-hU-cdD"/>
-                                <exclude reference="dC3-Ri-A0r"/>
-                                <exclude reference="ihP-xR-ne9"/>
-                                <exclude reference="om5-s8-YWf"/>
                                 <exclude reference="5FS-0O-Iis"/>
                                 <exclude reference="GMd-Bq-vaA"/>
                                 <exclude reference="I1U-Bj-KIB"/>
                                 <exclude reference="dZk-9r-lNL"/>
+                                <exclude reference="8Do-hU-cdD"/>
+                                <exclude reference="dC3-Ri-A0r"/>
+                                <exclude reference="ihP-xR-ne9"/>
+                                <exclude reference="om5-s8-YWf"/>
                                 <exclude reference="9ny-Nd-lSD"/>
                                 <exclude reference="fO6-gd-nS2"/>
                                 <exclude reference="ICi-Mu-CV7"/>
@@ -279,14 +301,14 @@
                                 <include reference="eMx-Qk-Td2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="8Do-hU-cdD"/>
-                                <include reference="dC3-Ri-A0r"/>
-                                <include reference="ihP-xR-ne9"/>
-                                <include reference="om5-s8-YWf"/>
                                 <include reference="5FS-0O-Iis"/>
                                 <include reference="GMd-Bq-vaA"/>
                                 <include reference="I1U-Bj-KIB"/>
                                 <include reference="dZk-9r-lNL"/>
+                                <include reference="8Do-hU-cdD"/>
+                                <include reference="dC3-Ri-A0r"/>
+                                <include reference="ihP-xR-ne9"/>
+                                <include reference="om5-s8-YWf"/>
                                 <include reference="9ny-Nd-lSD"/>
                                 <include reference="fO6-gd-nS2"/>
                                 <include reference="ICi-Mu-CV7"/>
@@ -333,12 +355,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="kPV-nv-dMr"/>
+                        <segue destination="ScG-tK-XTr" kind="relationship" relationship="rootViewController" id="CEp-dv-UYi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpt-2U-1VN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="583.5"/>
+            <point key="canvasLocation" x="330" y="547.5"/>
         </scene>
     </scenes>
 </document>

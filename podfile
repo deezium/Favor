@@ -4,5 +4,8 @@ target ‘Favor’ do
 	pod 'Parse'
 	pod 'Fabric'
 	pod 'Crashlytics'
+	pod 'Digits'
+	pod 'TwitterCore'
+	pod 'SwiftAddressBook'
 	pod 'Amplitude-iOS', '~> 3.0'
 end
