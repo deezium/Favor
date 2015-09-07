@@ -20,12 +20,14 @@ class LoginViewController: UIViewController {
             if session != nil {
                 println(session.phoneNumber)
                 println(session.userID)
+                self.performSegueWithIdentifier("showMainApp", sender: self)
             }
         })
         
         digitsButton.center = view.center
         digitsButton.addTarget(self, action: "didTapDigitsButton:", forControlEvents: .TouchUpInside)
         self.view.addSubview(digitsButton)
+        
         
         
         

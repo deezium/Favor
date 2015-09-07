@@ -21,7 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yJm-09-CjO"/>
                     <connections>
-                        <segue destination="IUj-mu-ncs" kind="show" id="F5s-68-aEg"/>
+                        <segue destination="IUj-mu-ncs" kind="show" identifier="showMainApp" id="F5s-68-aEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AL5-LU-0sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
