@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QdX-CS-x1s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ScG-tK-XTr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -21,7 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yJm-09-CjO"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="show" id="F5s-68-aEg"/>
+                        <segue destination="IUj-mu-ncs" kind="show" id="F5s-68-aEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AL5-LU-0sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="583.5"/>
+            <point key="canvasLocation" x="2733" y="583.5"/>
         </scene>
         <!--Nudge Create View Controller-->
         <scene sceneID="KJR-xu-lnQ">
@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXk-FI-bHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2650.5" y="578.25"/>
+            <point key="canvasLocation" x="3568.5" y="578.25"/>
         </scene>
         <!--Nudge Confirmation View Controller-->
         <scene sceneID="M8w-qh-TER">
@@ -342,25 +342,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcr-Df-yXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3402" y="567.75"/>
+            <point key="canvasLocation" x="4320" y="567.75"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Y9v-8M-TXD">
+        <scene sceneID="Vmo-Dh-0gf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QdX-CS-x1s" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IUj-mu-ncs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bu3-p7-cFN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MuC-Zu-7sS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ScG-tK-XTr" kind="relationship" relationship="rootViewController" id="CEp-dv-UYi"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="2Sj-bS-O6r"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tpt-2U-1VN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yq4-Sb-tMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="547.5"/>
+            <point key="canvasLocation" x="1815" y="583.5"/>
         </scene>
     </scenes>
 </document>

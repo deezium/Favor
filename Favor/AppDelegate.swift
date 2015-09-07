@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import Bolts
 import Fabric
+import Crashlytics
 import DigitsKit
 
 @UIApplicationMain
@@ -29,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         
-//        Fabric.with([Digits()])
+        Fabric.with([Crashlytics.self(), Digits.self()])
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         return true
