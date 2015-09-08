@@ -16,12 +16,11 @@ class LoginViewController: UIViewController {
     let defaultPassword = "defaultPassword"
     let showMainAppIdentifier = "showMainApp"
 
-    var users: [PFUser]?
-    var query = QueryController()
+    
     
     
     override func viewDidLoad() {
-        query.delegate = self
+        
         super.viewDidLoad()
         if let user = PFUser.currentUser() {
             println("current user is \(user)")
@@ -104,15 +103,5 @@ class LoginViewController: UIViewController {
     
 }
 
-extension LoginViewController: QueryControllerProtocol {
-    func didReceiveQueryResults(objects: [PFObject]) {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.users = objects as? [PFUser]
-            if self.users!.count > 1 {
-                println("SOMETHING HAS GONE TERRIBLY WRONG! More than 1 user?!")
-            }
-        })
-    }
-}
 
 

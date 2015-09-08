@@ -35,7 +35,13 @@ class NudgeCreateViewController: UIViewController {
         }
         
         let nudgeObject = PFObject(className: "Nudge")
-        nudgeObject.setObject("Andy", forKey: "sender")
+        var senderID: PFUser!
+        if let currentUser = PFUser.currentUser() {
+            senderID = currentUser
+        } else {
+            // senderID = PF // TODO: fix this nonsense.
+        }
+        nudgeObject.setObject(senderID, forKey: "senderID")
         nudgeObject.setObject(messageTextField.text, forKey: "message")
         nudgeObject.setObject(recipientTextField.text, forKey: "recipient")
         nudgeObject.setObject(0, forKey: "status")

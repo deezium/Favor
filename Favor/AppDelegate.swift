@@ -18,19 +18,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var users: [PFObject]?
+    var query = QueryController()
+    
     var loggedInViewControllerIdentifier = "rootNavigationController"
     var notLoggedInViewControllerIdentifier = "loginViewController"
     
     var initialViewControllerIdentifier: String!
     
-    var user: PFUser?
+//    var user: PFUser?
+    
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+        query.delegate = self
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let digitsSession = Digits.sharedInstance().session() {
+//            println("digits session is \(digitsSession)")
+//            query.getUserForPhoneNumber(digitsSession.phoneNumber)
+//            if let user = users?.first! as? PFUser {
+//                println("user is \(user)")
+//            }
+            
+            
+            
             // TODO: make the current user correspond to this session (link Digits --> PFUser)
             initialViewControllerIdentifier = loggedInViewControllerIdentifier
         } else {
@@ -78,7 +91,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+extension AppDelegate: QueryControllerProtocol {
+    func didReceiveQueryResults(objects: [PFObject]) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.users = objects as? [PFObject]
+            if self.users!.count > 1 {
+                println("SOMETHING HAS GONE TERRIBLY WRONG! More than 1 user?!")
+            }
+        })
+    }
 }
 
