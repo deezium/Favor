@@ -20,8 +20,10 @@ class QueryController {
     func getNudgesForUser(userName name: String) {
         var query = PFQuery(className: "Nudge")
         let currentUser = name
-        var objects = query.findObjects() as? [PFObject]
-        self.delegate?.didReceiveQueryResults(objects!)
+        if let objects = query.findObjects() as? [PFObject] {
+            self.delegate?.didReceiveQueryResults(objects)
+        }
+        
     }
     
     func getUserForPhoneNumber(number: String) {

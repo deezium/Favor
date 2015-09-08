@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ScG-tK-XTr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="KVH-x0-PpU">
             <objects>
-                <viewController id="ScG-tK-XTr" customClass="LoginViewController" customModule="Favor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="ScG-tK-XTr" customClass="LoginViewController" customModule="Favor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ibd-QZ-mX5"/>
                         <viewControllerLayoutGuide type="bottom" id="0Zh-Ns-arH"/>
@@ -31,7 +31,7 @@
         <!--Nudge List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="NudgeListViewController" customModule="Favor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="nudgeListViewController" id="vXZ-lx-hvc" customClass="NudgeListViewController" customModule="Favor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -347,7 +347,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Vmo-Dh-0gf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IUj-mu-ncs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="IUj-mu-ncs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MuC-Zu-7sS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

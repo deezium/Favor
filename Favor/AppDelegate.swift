@@ -18,10 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var loggedInViewControllerIdentifier = "rootNavigationController"
+    var notLoggedInViewControllerIdentifier = "loginViewController"
+    
+    var initialViewControllerIdentifier: String!
+    
     var user: PFUser?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let digitsSession = Digits.sharedInstance().session() {
+            // TODO: make the current user correspond to this session (link Digits --> PFUser)
+            initialViewControllerIdentifier = loggedInViewControllerIdentifier
+        } else {
+            initialViewControllerIdentifier = notLoggedInViewControllerIdentifier
+        }
+        
+        let viewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier(initialViewControllerIdentifier) as! UIViewController
+        self.window?.rootViewController = viewController
+        self.window?.makeKeyAndVisible()
+        
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios_guide#localdatastore/iOS
         Parse.enableLocalDatastore()
@@ -35,17 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self(), Digits.self()])
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
-        println("launch options are \(launchOptions)")
-        
-        if let currentUser = PFUser.currentUser() {
-            // show main app page
-        
-        } else {
-            // go to login page
-        }
-        
-        
         return true
     }
 
